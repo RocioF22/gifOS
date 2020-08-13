@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto guifOS</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/night.css" />
+    <link rel="stylesheet" href="./styles/shared.css" />
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="SegundaPagina.html">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<!--Rectángulo de conteo de visitas-->
+
+<body class="canNight">
+    <div class="barra rectangulo canNight">
+        <p class="bienvenidos">Bienvenidos/as a Guifos.com!------Dónde los gifs están.//////Números de visitas:
+            12.765.803</p>
+    </div>
+
+    <header>
+        <nav>
+            <!--Logo de la página-->
+            <a href="Index.html">
+                <div class="logo canNight"></div>
+            </a>
+            <!--Boton que redirige al segundo HTML-->
+            <div class="botonPadre">
+                <div class="botones-inline">
+                    <a href="SegundaPagina.html" class="button hover create-gifOS canNight">Crear gifOS</a>
+                </div>
+                <!--Boton para seleccionar tema-->
+                <div>
+                    <div id="dropdown-title">
+                        <button class="button hover canNight" onclick="buttonDropDown()">Elegir tema</button>
+                        <button class="bot hover canNight" onclick="buttonDropDown()">
+                            <img src="./assets/dropdown.svg" alt="Imagen flecha" class="arrow1 flecha1 canNight" />
+                            <img src="./assets/forward.svg" alt="Imagen flecha" class="arrow2 flecha2 canNight" />
+                        </button>
+                    </div>
+                    <div id="dropdown-content" class="canNight">
+                        <a href="#" onclick="colorFondo(false)"><u>S</u>ailor Day</a>
+                        <a href="#" onclick="colorFondo(true)"><u>S</u>ailor Night</a>
+                    </div>
+                </div>
+                <!--Enlace que te redirige a los gifs cerados y guardados-->
+                <a href="#" class="mis-gifos canNight" onclick="misGuifos()"><span class="subrayado canNight">M</span>is
+                    Guifos</a>
+            </div>
+        </nav>
+    </header>
+
+    <!--Seccion de busqueda-->
+    <div class="buscar1 canNight">
+        <div class="buscar2 rectangulo canNight"><b>Buscar</b></div>
+        <div class="formulario">
+            <input type="text" id="campoBusqueda" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"
+                name="search" class="casilla" />
+            <button id="botonBuscar" type="submit"
+                onclick="getButton(document.getElementById('campoBusqueda').value, 'busqueda')"
+                class="buscar buscarDeshabilitado canNight" disabled>
+                <span class="lupaDeshabilitada canNight" id="lupa"></span>
+                <span class="buscarLupaDeshabilitada canNight" id="buscarLupa">Buscar</span>
+            </button>
+        </div>
+        <!--Sugerencias de la busqueda que se está escribiendo-->
+        <div class="busquedasPadre">
+            <div class="busquedas canNight">
+                <button class="informacion canNight" onclick="getButton(this.innerHTML,'busqueda')"></button>
+                <button class="informacion canNight" onclick="getButton(this.innerHTML,'busqueda')"></button>
+                <button class="informacion canNight" onclick="getButton(this.innerHTML,'busqueda')"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cuadro canNight" id="misGifs">Mis guifos</div>
+    <!--Botones con los hashtag de las busquedas realizadas-->
+    <div class="searchedGifs"></div>
+
+    <!--Seccion de sugerencias-->
+    <div class="cuadro canNight" id="hoySugerimos">Hoy te sugerimos:</div>
+    <div class="sugerencias">
+        <div class="sugerenciasGifs">
+            <div class="hashtag canNight">
+                <img src="./assets/close.svg" alt="imagen">
+            </div>
+            <button class="button-blue verMas canNight">Ver más...</button>
+        </div>
+        <div class="sugerenciasGifs">
+            <div class="hashtag canNight">
+                <img src="./assets/close.svg" alt="imagen">
+            </div>
+            <button class="button-blue verMas canNight">Ver más...</button>
+        </div>
+        <div class="sugerenciasGifs">
+            <div class="hashtag canNight">
+                <img src="./assets/close.svg" alt="imagen">
+            </div>
+            <button class="button-blue verMas canNight">Ver más...</button>
+        </div>
+        <div class="sugerenciasGifs">
+            <div class="hashtag canNight">
+                <img src="./assets/close.svg" alt="imagen">
+            </div>
+            <button class="button-blue verMas canNight">Ver más...</button>
+        </div>
+    </div>
+
+    <!--Seccion de tendencias-->
+    <div class="cuadro canNight" id="cuadroPrincipal">Tendencias:</div>
+    <!--Resultados de busquedas-->
+    <div class="guifs" id="busqueda"></div>
+
+    <!--Anexos de archivos JS-->
+    <script src="./js/API.js"></script>
+    <script src="./js/shared.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

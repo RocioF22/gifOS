@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="./styles/segundoCSS.css" />
+    <link rel="stylesheet" href="./styles/shared.css" />
+    <link rel="stylesheet" href="./styles/night.css">
+    <title>Crea Gifs</title>
+</head>
+
+<!--Rectángulo de conteo de visitas-->
+
+<body>
+    <div class="barra rectangulo">
+        <p class="bienvenidos">Bienvenidos/as a Guifos.com!------Dónde los gifs están.//////Números de visitas:
+            12.765.803</p>
+    </div>
+
+    <!--Logo y flecha que dirige al primer HTML-->
+    <header class="headerImg">
+        <a href="Index.html">
+            <div class="atras"></div>
+        </a>
+        <div class="logo"></div>
+    </header>
+
+    <!--Seccion del primer cuadro para crear los gifs-->
+    <div class="tamanioCuadroGeneral disenioCuadros" id="primerCuadro">
+        <div class="tamanioRectangulo disenioRectangulos">Crear Guifos</div>
+        <div class="imagenTitulo"> <img src="./assets/window_img.png" alt="Image" class="window"> Aquí podrás crear tus
+            propios guifos</div>
+        <div class="textoPrincipal">
+            Crear tu <b><em>guifo</em></b> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos <br>
+            personalizados. Los pasos para crear tu guifo son:
+            <ol class="lista">
+                <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+                <li>Capturar tu momento guifo</li>
+                <li>Revisar el momento</li>
+                <li>isto para subir y compartir!</li>
+            </ol>
+            ¿Quieres comenzar a crear tu <b><em>guifo</em></b> ahora?
+        </div>
+        <div class="buttons">
+            <a href="Index.html" class="botones cancelar enlacePaginaPrincipal">Cancelar</a>
+            <button class="botones comenzar" onclick="comenzar()">Comenzar</button>
+        </div>
+    </div>
+
+    <!--Seccion del segundo cuadro. Grabación del gif-->
+    <div class="tamanioCuadro2 disenioCuadros" id="nuevoGif">
+        <div class="tamanioRectangulo2 disenioRectangulos containerRectangulos">
+            <span class="text">Un Chequeo Antes de Empezar</span>
+            <img src="./assets/close.svg" alt="imagen" onclick="cancelar()" class="close">
+        </div>
+        <div class="disenoVideo cuadroBorde">
+            <video id="recording" class="imagenGif"></video>
+            <img src="#" alt="Gif creado" id="uploadedGIF" class="imagenGif" />
+
+            <!--Seccion del quinto cuadro. Subiendo el gif-->
+            <div class="containerGlobe">
+                <img src="./assets/globe_img.png" alt="Imagen">
+                <h4>Estamos subiendo tu guifo…</h4>
+
+                <!--Barra de progreso-->
+                <div class="containerBarra width2">
+                    <div class="sub painted"></div>
+                    <div class="sub painted"></div>
+                    <div class="sub painted"></div>
+                    <div class="sub painted"></div>
+                    <div class="sub painted"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                </div>
+                <p class="time">Tiempo restante: <span class="years">38 años</span> algunos minutos</p>
+            </div>
+        </div>
+
+        <!--Cronometro del tercer cuadro (capturando el gif)-->
+        <div class="fotoCaptura" id="capturaFoto">
+            <div class="cronoWrapper" id="reloj">
+                <span id='crono'>00:00:00</span>
+            </div>
+
+            <!--Barra de progreso del cuarto cuadro (vista previa)-->
+            <div class="barraProgreso">
+                <div class="flecha"><img src="./assets/dropdown.svg" alt="ImagenFlecha" class="imagenFlecha">
+                </div>
+                <div class="containerBarra width1">
+                    <div class="sub painted"></div>
+                    <div class="sub painted"></div>
+                    <div class="sub painted"></div>
+                    <div class="sub painted"></div>
+                    <div class="sub painted"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                    <div class="sub"></div>
+                </div>
+                <!--Botones del cuarto cuadro (vista previa)-->
+            </div>
+            <div class="repetirSubir">
+                <button class="buttonGif repeatGif tamanioBotones" id="repetirCaptura"
+                    onclick="repetirCapturaBoton ()">Repetir Captura</button>
+                <button class="buttonGif uploadGif tamanioBotones" id="botonSubir" onclick="subirGuifo()">Subir
+                    Guifo</button>
+            </div>
+
+            <!--Boton cancelar del quinto cuadro (Subiendo gif)-->
+            <button class="botones cancelar" id="botonCancelar" style="display: none;"
+                onclick="abortUpload()">Cancelar</button>
+            <!--Imagen y boton de capturar del segundo cuadro (grabando gif)-->
+            <div class="botones2">
+                <button class="foto boton">
+                    <img src="./assets/camera.svg" alt="Foto cámara">
+                </button>
+                <button class="detener boton">
+                    <img src="./assets/recording.svg" alt="Foto detener">
+                </button>
+                <button class="captura" onclick="captureGIF()" id="recordButton">Capturar</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Seccion del ultimo cuadro (gif subido)-->
+    <div class="tamanioCuadros disenioCuadros" id="ultimoCuadro">
+        <div class="disenioRectangulos cuadroGuardado containerRectangulos">
+            <span>Guifo Subido Con Éxito</span>
+            <img src="./assets/close.svg" alt="imagen" onclick="cancelar()" class="close">
+        </div>
+        <div class="lastContainer">
+            <div class="cuadroBorde gifCargado" id="gifCreadoContainer"></div>
+            <div class="botonesGuardar">
+                <h4>Guifo creado con éxito</h4>
+                <!--Botón para copiar la URL gif y descargar el gif-->
+                <div id="aviso"></div>
+                <button class="buttonGif repeatGif ultimosBotones" onclick="getlink()">Copiar Enlace Guifo</button>
+                <button class="buttonGif repeatGif ultimosBotones" onclick="descargar()">Descargar Guifo</button>
+            </div>
+        </div>
+        <!--Boton Listo-->
+        <div class="botonListo">
+            <button class="buttonGif uploadGif tamanioBotones" onclick="cancelar()">Listo</button>
+        </div>
+    </div>
+
+    <!--Seccion de gifs creados y guardados-->
+    <div class="rectangulo2">Mis guifos</div>
+    <div class="searchedGifs"></div>
+
+    <!--Anexos de archivos JS-->
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="./js/API.js"></script>
+    <script src="./js/shared.js"></script>
+    <script src="./js/segundoJS.js"></script>
+</body>
+
+</html>

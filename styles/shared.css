@@ -1,0 +1,16 @@
+.searchedGifs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 6% 0 5%;
+}
+ 
+.guif4 {
+  width: 288px;
+  height: 298px;
+  margin: 6px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column-reverse;
+}

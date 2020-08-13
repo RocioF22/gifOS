@@ -1,0 +1,132 @@
+body.night {
+  background-color: #110038;
+}
+
+.rectangulo.night {
+  background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+}
+
+.logo.night {
+  background-image: url("../assets/gifOF_logo_dark.png");
+}
+
+.button.night {
+  background-color: #ee3efe;
+  color: #ffffff;
+  box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+}
+
+.hover.night:hover {
+  background: #ce36db;
+}
+
+.mis-gifos.night {
+  color: #ffffff;
+}
+
+.mis-gifos.night:hover {
+  border: 1px dotted white;
+}
+
+.subrayado.night {
+  text-decoration: none;
+}
+
+.subrayado.night:hover {
+  text-decoration: underline white;
+}
+
+.buscar1.night {
+  background: #b4b4b4;
+  box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
+}
+
+.mis-gifos.night:active {
+  color: rgba(255, 255, 255, 0.4);
+  border: none;
+}
+
+.subrayado.night:active {
+  text-decoration: underline rgba(255, 255, 255, 0.4);
+}
+
+.bot.night {
+  background-color: #ee3efe;
+}
+
+.flecha1.night {
+  display: none;
+}
+
+.flecha2.night {
+  display: block;
+}
+
+#dropdown-content.night {
+  background: #b4b4b4;
+  box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
+}
+
+#dropdown-content.night a {
+  background: #cccccc;
+  border: 1px solid #808080;
+  box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+}
+
+#dropdown-content.night a:hover {
+  background: #2e32fb;
+  border: 1px solid rgba(51, 53, 143, 0.2);
+  box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
+  color: #ffffff;
+}
+
+.buscarHabilitado.night {
+  background: #ee3efe;
+  box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+}
+
+.buscarHabilitado.night:active {
+  background: #ce36db;
+}
+
+.buscarDeshabilitado.night {
+  background: #b4b4b4;
+}
+
+.buscarLupaHabilitada.night {
+  color: #ffffff;
+}
+
+.buscarLupaDeshabilitada.night {
+  color: #8f8f8f;
+}
+
+.lupaHabilitada.night {
+  background-image: url("../assets/lupa_light.svg");
+}
+
+.lupaDeshabilitada.night {
+  background-image: url("../assets/Combined_Shape.svg");
+}
+
+.busquedas.night {
+  background: #b4b4b4;
+  box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
+}
+
+.informacion.night {
+  background: #cccccc;
+}
+
+.cuadro.night {
+  border: 1px solid #2e32fb;
+  box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
+}
+
+.hashtag.night {
+  background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+}
+
+.verMas.night:hover {
+  background: #2629cc;
+}
